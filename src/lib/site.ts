@@ -9,5 +9,6 @@ export const sections = {
   matches: "matches",
   news: "news",
   media: "media",
+  partners: "partners",
   contact: "contact",
 } as const;

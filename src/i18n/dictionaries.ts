@@ -25,6 +25,7 @@ const kz = {
     matches: "Матчтар",
     news: "Жаңалықтар",
     media: "Медиа",
+    partners: "Серіктестер",
     contact: "Байланыс",
   },
   hero: {
@@ -128,6 +129,11 @@ const kz = {
     social: "Әлеуметтік желілер",
     partners: "Серіктестер",
   },
+  partners: {
+    title: "Серіктестер",
+    kit: "Ойын формасындағы серіктестер",
+    club: "Клуб серіктестері",
+  },
   footer: {
     rights: "Барлық құқықтар қорғалған.",
     dataNote: "Статистика ресми дереккөздерден алынды. Соңғы тексеру күні:",
@@ -161,6 +167,7 @@ const ru: Dictionary = {
     matches: "Матчи",
     news: "Новости",
     media: "Медиа",
+    partners: "Партнёры",
     contact: "Контакты",
   },
   hero: {
@@ -263,6 +270,11 @@ const ru: Dictionary = {
     email: "Email",
     social: "Социальные сети",
     partners: "Партнёры",
+  },
+  partners: {
+    title: "Партнёры",
+    kit: "Партнёры на игровой форме",
+    club: "Партнёры клуба",
   },
   footer: {
     rights: "Все права защищены.",

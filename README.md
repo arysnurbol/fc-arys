@@ -74,7 +74,7 @@ Season statistics, form guide, hero result and "last updated" dates are computed
 2. **Contacts** — no street address, phone or email is published anywhere. The footer shows only "Арыс, Түркістан облысы"; add `phone`/`email` in `club.ts` and they appear automatically.
 3. **Social accounts** — only Instagram @fc.arys was found.
 4. **Stadium capacity** — not verified (field left empty).
-5. **Partners/sponsors** — logos appear in club graphics (MANTA, dprint, BOSSTON, BAYSAN and others) but there is no official list, so no partner section is shown.
+5. **Partners/sponsors** — no official list is published. The partners section (`src/data/partners.ts`) shows the 4 names on the match kit (MANTA, dprint, BOSSTON, BAYSAN) and the 4 others from the club's graphics (Maki Maki Arys, Erzhan Plov, Эскулап Vita, FORWARD) as plain name plates. The club should confirm the list and send logo files (set `logo` / `url` per partner).
 6. **Player photos** — official league photos exist for 24 players (kffleague.kz/storage/qfl-files/player_photos/) but the server refused automated download (403). Save them as `public/images/players/<slug>.webp` and add `photo: "/images/players/<slug>.webp"` in `players.ts`. Until then cards lead with the shirt number.
 7. **Kazakh spellings of player names** come only from the fan site; Russian spellings are from kpl.kz. Please confirm.
 8. **Positions with conflicting sources** — #11 Мансуров (FW/MF/CB), #14 Илгербай (DF/MF/FW), #6, #10, #13, #17, #19, #29, #80. Majority used.

@@ -17,7 +17,7 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-const NAV = ["home", "club", "team", "matches", "news", "media"] as const;
+const NAV = ["home", "club", "team", "matches", "news", "media", "partners"] as const;
 
 export function Footer({ t, locale }: { t: Dictionary; locale: Locale }) {
   const { contacts } = club;

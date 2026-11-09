@@ -8,6 +8,7 @@ import { Team } from "@/components/sections/Team";
 import { Season } from "@/components/sections/Season";
 import { ClubIdentity } from "@/components/sections/ClubIdentity";
 import { Media } from "@/components/sections/Media";
+import { Partners } from "@/components/sections/Partners";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { club } from "@/data/club";
@@ -33,6 +34,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <Season t={t} locale={lang} />
         <ClubIdentity t={t} locale={lang} />
         <Media t={t} locale={lang} />
+        <Partners t={t} />
       </main>
       <Footer t={t} locale={lang} />
     </>

@@ -10,7 +10,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import type { Locale } from "@/types/football";
 
 type NavKey = keyof Dictionary["nav"];
-const NAV: NavKey[] = ["home", "club", "team", "matches", "news", "media", "contact"];
+const NAV: NavKey[] = ["home", "club", "team", "matches", "news", "media", "partners", "contact"];
 
 export function Header({
   locale,
@@ -63,7 +63,7 @@ export function Header({
           </span>
         </a>
 
-        <nav aria-label={a11y.mainNav} className="hidden lg:block">
+        <nav aria-label={a11y.mainNav} className="hidden xl:block">
           <ul className="flex items-center gap-7 text-[0.95rem] font-medium text-chalk/80">
             {NAV.map((key) => (
               <li key={key}>
@@ -79,7 +79,7 @@ export function Header({
           <LangSwitch locale={locale} label={a11y.language} />
           <button
             type="button"
-            className="grid size-11 place-items-center rounded-md text-chalk lg:hidden"
+            className="grid size-11 place-items-center rounded-md text-chalk xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? a11y.closeMenu : a11y.openMenu}
@@ -94,7 +94,7 @@ export function Header({
       <div
         id="mobile-nav"
         hidden={!open}
-        className="h-[calc(100svh-5rem)] overflow-y-auto border-t border-steel bg-night lg:hidden"
+        className="h-[calc(100svh-5rem)] overflow-y-auto border-t border-steel bg-night xl:hidden"
       >
         <nav aria-label={a11y.mainNav} className="container-x py-6">
           <ul>
