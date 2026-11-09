@@ -4,8 +4,10 @@
  * - club: names in the partner strip of the club's match graphics on fc-arys.kz.
  * Logos: none available yet — add a file under /public/images/partners/ and set `logo`.
  */
+import type { Localized } from "@/types/football";
+
 export interface Partner {
-  name: string;
+  name: string | Localized;
   tier: "kit" | "club";
   logo?: string;
   url?: string;
@@ -17,9 +19,10 @@ export const partners: Partner[] = [
   { name: "BOSSTON", tier: "kit" },
   { name: "BAYSAN", tier: "kit" },
   { name: "Maki Maki Arys", tier: "club" },
-  { name: "Erzhan Plov", tier: "club" },
   { name: "Эскулап Vita", tier: "club" },
   { name: "FORWARD", tier: "club" },
+  { name: "kaws", tier: "club" },
+  { name: { kz: "Арыс қаласының әкімдігі", ru: "Акимат города Арыс" }, tier: "club" },
 ];
 
 export const partnersSource =

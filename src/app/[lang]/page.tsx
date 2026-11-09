@@ -34,7 +34,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         <Season t={t} locale={lang} />
         <ClubIdentity t={t} locale={lang} />
         <Media t={t} locale={lang} />
-        <Partners t={t} />
+        <Partners t={t} locale={lang} />
       </main>
       <Footer t={t} locale={lang} />
     </>

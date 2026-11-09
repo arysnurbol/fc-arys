@@ -3,9 +3,10 @@ import { partners, type Partner } from "@/data/partners";
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { Locale } from "@/types/football";
 
 /** Logos when a file exists; otherwise a neutral name plate (we don't redraw anyone's brand). */
-export function Partners({ t }: { t: Dictionary }) {
+export function Partners({ t, locale }: { t: Dictionary; locale: Locale }) {
   if (partners.length === 0) return null;
   const groups = [
     { key: "kit" as const, label: t.partners.kit },
@@ -20,12 +21,16 @@ export function Partners({ t }: { t: Dictionary }) {
           {groups.map((g) => (
             <div key={g.key}>
               <h3 className="text-sm font-semibold text-gold-deep">{g.label}</h3>
-              <ul className={cn("mt-4 grid gap-px overflow-hidden rounded-xl border border-crest/15 bg-crest/15", "grid-cols-2 md:grid-cols-4")}>
-                {partners.filter((p) => p.tier === g.key).map((p) => (
-                  <li key={p.name} className="bg-chalk">
-                    <Plate partner={p} large={g.key === "kit"} />
+              {/* flex-wrap + grow: an incomplete last row stretches instead of leaving empty cells */}
+              <ul className="mt-4 flex flex-wrap gap-px overflow-hidden rounded-xl border border-crest/15 bg-crest/15">
+                {partners.filter((p) => p.tier === g.key).map((p) => {
+                  const name = typeof p.name === "string" ? p.name : p.name[locale];
+                  return (
+                  <li key={name} className="grow basis-[calc(50%-1px)] bg-chalk md:basis-[calc(25%-1px)]">
+                    <Plate partner={p} name={name} large={g.key === "kit"} />
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -35,11 +40,11 @@ export function Partners({ t }: { t: Dictionary }) {
   );
 }
 
-function Plate({ partner, large }: { partner: Partner; large: boolean }) {
+function Plate({ partner, name, large }: { partner: Partner; name: string; large: boolean }) {
   const content = partner.logo ? (
-    <Image src={partner.logo} alt={partner.name} width={160} height={64} className="h-10 w-auto object-contain md:h-12" />
+    <Image src={partner.logo} alt={name} width={160} height={64} className="h-10 w-auto object-contain md:h-12" />
   ) : (
-    <span className={cn("text-center font-semibold text-crest/80", large ? "text-xl md:text-2xl" : "text-lg")}>{partner.name}</span>
+    <span className={cn("text-center font-semibold text-crest/80", large ? "text-xl md:text-2xl" : "text-lg")}>{name}</span>
   );
   const cls = cn("grid place-items-center px-4 transition-colors", large ? "h-28 md:h-32" : "h-20 md:h-24");
   return partner.url ? (
